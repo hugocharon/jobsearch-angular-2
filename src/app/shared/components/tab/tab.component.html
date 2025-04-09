@@ -1,1 +1,5 @@
-<p>tab works!</p>
+<ul>
+    <li *ngFor="let tab of tabs" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="selectTab(tab)" [routerLink]="getRoute(tab)">
+        <a>{{ tab }}</a>
+    </li>
+</ul>

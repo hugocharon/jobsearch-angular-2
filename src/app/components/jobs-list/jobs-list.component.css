@@ -44,6 +44,12 @@ ul {
         span {
             width: 1.7em;
             height: 1.5em;
+            cursor: pointer;
+
+            &.active {
+                color: gold;
+                background-color: gold;
+            }
         }
     }
 }

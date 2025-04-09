@@ -1,5 +1,5 @@
-
 <h1>Find your job</h1>
+<app-tab></app-tab>
 <ul>
     <li *ngFor="let job of jobs">
         <img [src]="job.companyLogo" alt="Company Logo" />
@@ -10,6 +10,6 @@
                 <p>{{ job.reference }}</p>
             </div>
         </div>
-        <span class="icon-star"></span>
+        <span class="icon-star" [ngClass]="{ 'active': job.isFavourite }" (click)="toggleFavourite(job)"></span>
     </li>
 </ul>

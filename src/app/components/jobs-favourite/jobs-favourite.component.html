@@ -1,1 +1,14 @@
-<p>jobs-favourite works!</p>
+<h1>Find your job</h1>
+<app-tab></app-tab>
+<ul>
+    <li *ngFor="let job of jobs">
+        <img [src]="job.companyLogo" alt="Company Logo" />
+        <div>
+            <h4>{{ job.title }}</h4>
+            <div>
+                <p>{{ job.companyName }}</p>
+                <p>{{ job.reference }}</p>
+            </div>
+        </div>
+    </li>
+</ul>

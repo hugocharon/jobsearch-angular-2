@@ -1,12 +1,13 @@
-import { AfterContentInit, AfterViewInit, Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { JobsService } from '../../shared/services/jobs.service';
 import { Job } from '../../shared/models/job.models';
 import { CommonModule } from '@angular/common';
+import { TabComponent } from '../../shared/components/tab/tab.component';
 
 @Component({
   selector: 'app-jobs-list',
   standalone: true,
-  imports: [CommonModule], // Permet d'utiliser les directives Angular de base (*ngFor, *ngIf, etc.)
+  imports: [CommonModule, TabComponent], // Permet d'utiliser les directives Angular de base (*ngFor, *ngIf, etc.)
   templateUrl: './jobs-list.component.html',
   styleUrl: './jobs-list.component.css'
 })
@@ -18,8 +19,21 @@ export class JobsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.jobsService.getJobs().subscribe((data) => {
-      this.jobs = data;
+      this.jobs = data.map(job => ({
+        ...job,
+        isFavourite: this.getFavouriteStatus(job.id.toString())
+      }));;
     });
+  }
+
+  toggleFavourite(job: Job) {
+    job.isFavourite = !job.isFavourite;
+    localStorage.setItem(job.id.toString(), JSON.stringify(job.isFavourite));
+  }
+
+  getFavouriteStatus(reference: string): boolean {
+    const storedStatus = localStorage.getItem(reference);
+    return storedStatus ? JSON.parse(storedStatus) : false;
   }
 
 }

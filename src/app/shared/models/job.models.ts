@@ -9,6 +9,7 @@ export class Job {
       public industries?: string[],
       public types?: string[],
       public description?: string,
-      public publishDate?: Date
+      public publishDate?: Date,
+      public isFavourite?: boolean,
     ) {}
   }
