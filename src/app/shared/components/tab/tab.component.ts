@@ -22,7 +22,7 @@ export class TabComponent {
       case 'Jobs':
         return '/jobs';
       case 'Favourites':
-        return '/favourite';
+        return '/favourites';
       default:
         return '/jobs';
     }

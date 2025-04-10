@@ -1,6 +1,11 @@
-h1 {
+h1, p {
     text-align: center;
 }
+
+p.nothing {
+    margin-top: 5rem;
+}
+
 
 ul {
     display: flex;
