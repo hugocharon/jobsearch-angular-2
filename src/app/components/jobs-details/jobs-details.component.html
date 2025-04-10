@@ -1,12 +1,12 @@
-<h1>Find your job</h1>
 <app-tab></app-tab>
-<div>
+
+<div *ngIf="job; else jobNotFound">
     <button [routerLink]="['/jobs']">Back</button>
     <div class="title">
-        <img [src]="job?.companyLogo" alt="Company Logo" />
+        <img [src]="job.companyLogo" alt="Company Logo" />
         <div>
-            <h3>{{ job?.title }}</h3>
-            <h3>{{ job?.companyName }}</h3>
+            <h3>{{ job.title }}</h3>
+            <h3>{{ job.companyName }}</h3>
             <div>
                 <span class="type" *ngFor="let type of job?.types">{{ type }}</span>
                 <span class="industry" *ngFor="let industry of job?.industries">{{ industry }}</span>
@@ -14,9 +14,14 @@
         </div>
     </div>
     <div class="details">
-        <p><strong>Published Date:</strong> {{ job?.publishDate | date :'dd/MM/yyyy' }}</p>
-        <p><strong>Location:</strong> {{ job?.location }}</p>
-        <p><strong>Reference:</strong> {{ job?.reference }}</p>
+        <p><strong>Published Date:</strong> {{ job.publishDate | date :'dd/MM/yyyy' }}</p>
+        <p><strong>Location:</strong> {{ job.location }}</p>
+        <p><strong>Reference:</strong> {{ job.reference }}</p>
         <p><strong>Description:</strong></p>
-        <div class="description" [innerHTML]="job?.description"></div>
+        <div class="description" [innerHTML]="job.description"></div>
+    </div>
 </div>
+
+<ng-template #jobNotFound>
+    <p class="nothing">Job not found</p>
+</ng-template>

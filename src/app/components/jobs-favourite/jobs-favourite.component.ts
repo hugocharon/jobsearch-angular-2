@@ -32,4 +32,5 @@ export class JobsFavouriteComponent {
     const storedStatus = localStorage.getItem(reference);
     return storedStatus ? JSON.parse(storedStatus) : false;
   }
+  
 }

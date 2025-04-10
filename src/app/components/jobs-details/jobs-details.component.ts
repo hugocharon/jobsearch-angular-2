@@ -13,6 +13,7 @@ import { Job } from '../../shared/models/job.models';
   styleUrl: './jobs-details.component.css'
 })
 export class JobsDetailsComponent implements OnInit {
+
   private readonly jobsService = inject(JobsService);
   private route = inject(ActivatedRoute);
 
@@ -26,4 +27,5 @@ export class JobsDetailsComponent implements OnInit {
       });
     }
   }
+  
 }

@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-jobs-list',
   standalone: true,
-  imports: [CommonModule, TabComponent, RouterModule], // Permet d'utiliser les directives Angular de base (*ngFor, *ngIf, etc.)
+  imports: [CommonModule, TabComponent, RouterModule],
   templateUrl: './jobs-list.component.html',
   styleUrl: './jobs-list.component.css'
 })
@@ -36,5 +36,5 @@ export class JobsListComponent implements OnInit {
     const storedStatus = localStorage.getItem(reference);
     return storedStatus ? JSON.parse(storedStatus) : false;
   }
-
+  
 }
