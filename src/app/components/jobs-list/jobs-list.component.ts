@@ -3,11 +3,12 @@ import { JobsService } from '../../shared/services/jobs.service';
 import { Job } from '../../shared/models/job.models';
 import { CommonModule } from '@angular/common';
 import { TabComponent } from '../../shared/components/tab/tab.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-jobs-list',
   standalone: true,
-  imports: [CommonModule, TabComponent], // Permet d'utiliser les directives Angular de base (*ngFor, *ngIf, etc.)
+  imports: [CommonModule, TabComponent, RouterModule], // Permet d'utiliser les directives Angular de base (*ngFor, *ngIf, etc.)
   templateUrl: './jobs-list.component.html',
   styleUrl: './jobs-list.component.css'
 })

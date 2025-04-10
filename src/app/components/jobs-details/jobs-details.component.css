@@ -1,0 +1,69 @@
+h1 {
+    text-align: center;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+    button {
+        width: auto;
+        margin: 0;
+    }
+
+    div.title {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        img {
+            max-width: 7.5rem;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            margin-left: 1rem;
+
+            h3 {
+                margin-left: 0;
+                margin-right: 0;
+                margin-top: 0.25rem;
+                margin-bottom: 0.25rem;
+            }
+
+            div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 0;
+
+                span {
+                    padding: 0.25rem;
+                    border-radius: 0.75rem;
+                    color: black;
+                    font-weight: bold;
+
+                    &.type {
+                        background-color: lightpink;
+                    }
+
+                    &.industry {
+                        background-color: lightskyblue;
+                    }
+
+                    &:not(:first-child) {
+                        margin-left: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    div {
+        margin: 0;
+    }
+}

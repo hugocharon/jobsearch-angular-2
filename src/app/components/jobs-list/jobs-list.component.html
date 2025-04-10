@@ -4,7 +4,7 @@
     <li *ngFor="let job of jobs">
         <img [src]="job.companyLogo" alt="Company Logo" />
         <div>
-            <h4>{{ job.title }}</h4>
+            <a [routerLink]="['/jobs', job.id]"><h4>{{ job.title }}</h4></a>
             <div>
                 <p>{{ job.companyName }}</p>
                 <p>{{ job.reference }}</p>

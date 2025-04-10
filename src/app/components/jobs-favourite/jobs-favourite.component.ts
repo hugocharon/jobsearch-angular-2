@@ -3,11 +3,12 @@ import { TabComponent } from '../../shared/components/tab/tab.component';
 import { CommonModule } from '@angular/common';
 import { JobsService } from '../../shared/services/jobs.service';
 import { Job } from '../../shared/models/job.models';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-jobs-favourite',
   standalone: true,
-  imports: [CommonModule, TabComponent],
+  imports: [CommonModule, TabComponent, RouterModule],
   templateUrl: './jobs-favourite.component.html',
   styleUrl: './jobs-favourite.component.css'
 })
