@@ -13,18 +13,7 @@ export class TabComponent {
   tabs: string[] = ['Jobs', 'Favourites'];
   activeTab: string = this.tabs[0];
 
-  selectTab(tab: string) {
+  public selectTab(tab: string): void {
     this.activeTab = tab;
-  }
-
-  getRoute(tab: string): string {
-    switch (tab) {
-      case 'Jobs':
-        return '/jobs';
-      case 'Favourites':
-        return '/favourites';
-      default:
-        return '/jobs';
-    }
   }
 }

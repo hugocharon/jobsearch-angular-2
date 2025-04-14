@@ -1,6 +1,6 @@
 <app-tab></app-tab>
 
-<p class="nothing" *ngIf="jobs.length == 0">No favorite selected</p>
+<p class="nothing" *ngIf="jobs.length === 0">No favorite selected</p>
 <ul>
     <li *ngFor="let job of jobs">
         <img [src]="job.companyLogo" alt="Company Logo" />

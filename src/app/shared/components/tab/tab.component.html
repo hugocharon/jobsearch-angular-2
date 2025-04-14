@@ -1,6 +1,6 @@
 <h1>Find your job</h1>
 <ul>
-    <li *ngFor="let tab of tabs" routerLinkActive="active" (click)="selectTab(tab)" [routerLink]="getRoute(tab)">
+    <li *ngFor="let tab of tabs" routerLinkActive="active" (click)="selectTab(tab)" [routerLink]="'/'+tab | lowercase">
         <a>{{ tab }}</a>
     </li>
 </ul>

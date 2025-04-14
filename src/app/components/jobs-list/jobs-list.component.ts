@@ -19,7 +19,7 @@ export class JobsListComponent implements OnInit {
   public jobs: Job[] = [];
 
   ngOnInit(): void {
-    this.jobsService.getJobs().subscribe((data) => {
+    this.jobsService.getJobs().subscribe((data : Job[]) => {
       this.jobs = data.map(job => ({
         ...job,
         isFavourite: this.getFavouriteStatus(job.id.toString())
@@ -27,12 +27,12 @@ export class JobsListComponent implements OnInit {
     });
   }
 
-  toggleFavourite(job: Job) {
+  public toggleFavourite(job: Job): void {
     job.isFavourite = !job.isFavourite;
     localStorage.setItem(job.id.toString(), JSON.stringify(job.isFavourite));
   }
 
-  getFavouriteStatus(reference: string): boolean {
+  private getFavouriteStatus(reference: string): boolean {
     const storedStatus = localStorage.getItem(reference);
     return storedStatus ? JSON.parse(storedStatus) : false;
   }

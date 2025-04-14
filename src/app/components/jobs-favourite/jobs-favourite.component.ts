@@ -16,10 +16,10 @@ export class JobsFavouriteComponent {
   
   private readonly jobsService = inject(JobsService);
   
-    public jobs: Job[] = [];
+  public jobs: Job[] = [];
 
   ngOnInit(): void {
-    this.jobsService.getJobs().subscribe((data) => {
+    this.jobsService.getJobs().subscribe((data : Job[]) => {
       this.jobs = data.map(job => ({
         ...job,
         isFavourite: this.getFavouriteStatus(job.id.toString())
@@ -28,7 +28,7 @@ export class JobsFavouriteComponent {
     });
   }
 
-  getFavouriteStatus(reference: string): boolean {
+  private getFavouriteStatus(reference: string): boolean {
     const storedStatus = localStorage.getItem(reference);
     return storedStatus ? JSON.parse(storedStatus) : false;
   }

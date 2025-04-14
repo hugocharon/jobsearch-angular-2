@@ -22,7 +22,7 @@ export class JobsDetailsComponent implements OnInit {
   ngOnInit(): void {
     const jobId = this.route.snapshot.paramMap.get('id');
     if(jobId) {
-      this.jobsService.getJobById(Number.parseInt(jobId)).subscribe((data) => {
+      this.jobsService.getJobById(Number.parseInt(jobId)).subscribe((data : Job) => {
         this.job = data;
       });
     }
