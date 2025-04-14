@@ -10,8 +10,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './tab.component.css'
 })
 export class TabComponent {
-  tabs: string[] = ['Jobs', 'Favourites'];
-  activeTab: string = this.tabs[0];
+  public tabs: string[] = ['Jobs', 'Favourites'];
+  public activeTab: string = this.tabs[0];
 
   public selectTab(tab: string): void {
     this.activeTab = tab;
